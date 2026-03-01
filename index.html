@@ -268,12 +268,20 @@ body{background:var(--darker);font-family:'VT323',monospace;color:#fff;overflow:
    Fixed: moved UP so they never get clipped
    Bigger touch targets, cleaner layout          */
 .mobile-btns{
-  display:flex;justify-content:center;align-items:center;
-  gap:clamp(6px,1.8vw,14px);
-  padding:10px 8px;
-  background:rgba(0,0,0,.78);backdrop-filter:blur(6px);
-  z-index:10;border-top:2px solid rgba(255,255,255,.06);
-  flex-shrink:0;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(6px,1.8vw,14px);
+  padding: 10px 8px;
+  
+  background: rgba(0,0,0,.78);
+  backdrop-filter: blur(6px);
+  z-index: 999; /* ดันให้อยู่บนสุด */
 }
 .arrow-btn{
   width:clamp(58px,14vw,86px);height:clamp(58px,14vw,86px);
